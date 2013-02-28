@@ -8,6 +8,8 @@
 // @match         https://*.github.com/lisausa/*
 // @match         https://*.hipchat.com/*
 // @match         http://*.hipchat.com/*
+// @match         http://webmail.thedolancompany.com/*
+// @match         https://webmail.thedolancompany.com/*
 // @exclude       http://lisausa.atlassian.com/
 // @exclude       https://lisausa.atlassian.com/
 // @updateURL     https://raw.github.com/tdc-legislative/userscripts/master/tdc_jira_autolinker.user.js
