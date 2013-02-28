@@ -32,7 +32,7 @@ var regexes = [
 var css =
 " a.linkazza { \
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAPFBMVEUAM2bf5exwjalAZoy/zNkQQHD///+fssVff58hTXqQprzv8vXP2eIwWYNQc5avv89/mbLQ2ePv9/dggKAwU+i0AAAACXBIWXMAAAsSAAALEgHS3X78AAAAIHRFWHRTb2Z0d2FyZQBNYWNyb21lZGlhIEZpcmV3b3JrcyBNWLuRKiQAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDkvMjIvMDRc4f1BAAAAgUlEQVR4nE2PAQ6FIAxDO5UiDFHC/e/6x+RHmkG2l6wU0KUp6dvBznnwAOw6XyDoZM5khxiISuGUUCNq46JWweJu9+3exTxaSIUZyCwptGHaAp4O9Ac2+7NGEqzG7IARrvgPNknkB1iBygVIAIIsYB8r+wcsxbaNJBMIcKleGH/jD4L8Bh8bDb2FAAAAAElFTkSuQmCC); \
-    padding-left: 17px; !important \
+    padding-left: 17px !important; \
     background-repeat: no-repeat; \
   }";
 
