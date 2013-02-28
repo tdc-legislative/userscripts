@@ -19,7 +19,7 @@
 // Stole this from: https://github.com/meh/userscripts/blob/master/linkazza.user.js
 
 var exclude = [
-  'a', 'head', 'noscript', 'option', 'script', 'style', 'title', 'textarea'
+  'a', 'head', 'noscript', 'option', 'script', 'style', 'title', 'textarea', 'div[@id="ace-editor"]'
 ];
 
 var xpath =
@@ -135,7 +135,6 @@ function linkazza (node) {
       }
 
       a.setAttribute('href', 'https://lisausa.atlassian.net/browse/' + link);
-      console.log(link);
 
       position = match.index + link.length;
 
