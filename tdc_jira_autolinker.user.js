@@ -26,7 +26,7 @@ var xpath =
   './/text()[not(ancestor::' + exclude.join(') and not(ancestor::') + ')]';
 
 var regexes = [
-  /\b[A-Z]{2,}-\d+\b/gi
+  /\b[A-Z]{2,}-\d+\b/g
 ];
 
 var css =
