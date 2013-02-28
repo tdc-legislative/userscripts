@@ -27,6 +27,13 @@ var regexes = [
   /\b[A-Z]{2,}-\d+\b/gi
 ];
 
+var css =
+" a.linkazza { \
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAPFBMVEUAM2bf5exwjalAZoy/zNkQQHD///+fssVff58hTXqQprzv8vXP2eIwWYNQc5avv89/mbLQ2ePv9/dggKAwU+i0AAAACXBIWXMAAAsSAAALEgHS3X78AAAAIHRFWHRTb2Z0d2FyZQBNYWNyb21lZGlhIEZpcmV3b3JrcyBNWLuRKiQAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDkvMjIvMDRc4f1BAAAAgUlEQVR4nE2PAQ6FIAxDO5UiDFHC/e/6x+RHmkG2l6wU0KUp6dvBznnwAOw6XyDoZM5khxiISuGUUCNq46JWweJu9+3exTxaSIUZyCwptGHaAp4O9Ac2+7NGEqzG7IARrvgPNknkB1iBygVIAIIsYB8r+wcsxbaNJBMIcKleGH/jD4L8Bh8bDb2FAAAAAElFTkSuQmCC); \
+    padding-left: 17px; !important \
+    background-repeat: no-repeat; \
+  }";
+
 var observer = new (this.MutationObserver || this.MozMutationObserver || this.WebKitMutationObserver)(function (mutations) {
   mutations.forEach(function (mutation) {
     if (mutation.type == "childList") {
@@ -47,6 +54,7 @@ function linkazza (node) {
   if (node.already_touched) {
     return;
   }
+  insertStyleElement();
 
   if (node.nodeType == Node.ELEMENT_NODE) {
     if (node.className == 'linkazza') {
@@ -194,4 +202,13 @@ function touch (dom) {
   dom.already_touched = true;
 
   return dom;
+}
+
+function insertStyleElement() {
+  if(!document.getElementById('linkazza_style')){
+    var style = document.createElement('style');
+    style.innerHTML = css;
+    style.setAttribute('id', 'linkazza_style');
+    document.getElementsByTagName('head')[0].appendChild(style);
+  };
 }
