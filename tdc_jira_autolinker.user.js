@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name          JIRA Issue ID auto-linker for lisausa.atlassian.com
 // @namespace     http://lisausa.atlassian.com
-// @description   Searches the page for MN-123, or LISA-32, or LFEDM-12, etc. and links those to the respective issue in JIRA. Only tested against github and used on Chrome at this point
+// @description   Searches the page for MN-123, or LISA-32, or LFEDM-12, etc. and links those to the respective issue in JIRA. Only tested against on Chrome at this point
 // @match         http://*.github.com/tdc-legislative/*
 // @match         https://*.github.com/tdc-legislative/*
 // @match         http://*.github.com/lisausa/*
 // @match         https://*.github.com/lisausa/*
+// @match         https://*.hipchat.com/*
+// @match         http://*.hipchat.com/*
 // @exclude       http://lisausa.atlassian.com/
 // @exclude       https://lisausa.atlassian.com/
 // @updateURL     https://raw.github.com/tdc-legislative/userscripts/master/tdc_jira_autolinker.user.js
