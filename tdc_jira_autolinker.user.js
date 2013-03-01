@@ -56,7 +56,6 @@ function linkazza (node) {
   if (node.already_touched) {
     return;
   }
-  insertStyleElement();
 
   if (node.nodeType == Node.ELEMENT_NODE) {
     if (node.className == 'linkazza') {
@@ -75,6 +74,7 @@ function linkazza (node) {
       linkazza(result.snapshotItem(i++));
     });
 
+    insertStyleElement();
     return;
   }
 
@@ -97,6 +97,12 @@ function linkazza (node) {
       text += node.nextSibling.textContent;
       node.parentNode.removeChild(node.nextSibling);
     }
+  }
+  if(text != node.textContent){
+    new_node = document.createTextNode(text);
+    node.parentNode.insertBefore(new_node, node);
+    node.parentNode.removeChild(node);
+    node = new_node;
   }
 
   for (var i = 0, match; i < regexes.length; i++) {
@@ -167,7 +173,6 @@ function linkazza (node) {
     while (container.firstChild) {
       node.parentNode.insertBefore(container.firstChild, node);
     }
-
     node.parentNode.removeChild(node);
   }
 }
