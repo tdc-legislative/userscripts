@@ -13,7 +13,7 @@
 // @exclude       http://lisausa.atlassian.com/
 // @exclude       https://lisausa.atlassian.com/
 // @updateURL     https://raw.github.com/tdc-legislative/userscripts/master/tdc_jira_autolinker.user.js
-// @version       1.0
+// @version       1.1
 // ==/UserScript==
 
 // Stole this from: https://github.com/meh/userscripts/blob/master/linkazza.user.js
