@@ -2,18 +2,14 @@
 // @name          JIRA Issue ID auto-linker for lisausa.atlassian.com
 // @namespace     http://lisausa.atlassian.com
 // @description   Searches the page for MN-123, or LISA-32, or LFEDM-12, etc. and links those to the respective issue in JIRA. Only tested against on Chrome at this point
-// @match         http://*.github.com/tdc-legislative/*
-// @match         https://*.github.com/tdc-legislative/*
-// @match         http://*.github.com/lisausa/*
-// @match         https://*.github.com/lisausa/*
-// @match         https://*.hipchat.com/*
-// @match         http://*.hipchat.com/*
-// @match         http://webmail.thedolancompany.com/*
-// @match         https://webmail.thedolancompany.com/*
-// @exclude       http://lisausa.atlassian.com/
-// @exclude       https://lisausa.atlassian.com/
+// @match         *://*.github.com/tdc-legislative/*
+// @match         *://*.github.com/lisausa/*
+// @match         *://*.hipchat.com/*
+// @match         *://webmail.thedolancompany.com/*
+// @match         file://*
+// @exclude       *://lisausa.atlassian.com/
 // @updateURL     https://raw.github.com/tdc-legislative/userscripts/master/tdc_jira_autolinker.user.js
-// @version       1.1
+// @version       1.2
 // ==/UserScript==
 
 // Stole this from: https://github.com/meh/userscripts/blob/master/linkazza.user.js
@@ -26,7 +22,7 @@ var xpath =
   './/text()[not(ancestor::' + exclude.join(') and not(ancestor::') + ')]';
 
 var regexes = [
-  /\b[A-Z]{2,}-\d+\b/g
+  /\b(MN|LFEDM|LISA|LSADMIN|LS[CT]?|LI|SUPRT)-\d+\b/g
 ];
 
 var css =
